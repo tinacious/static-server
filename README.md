@@ -2,19 +2,42 @@
 
 `static-server` is a simple command line app written in Go that serves your current working directory as a static server.
 
+- [Features](#features)
 - [Installation](#installation)
+  - [Install using Go](#install-using-go)
+  - [Install manually](#install-manually)
 - [Usage](#usage)
   - [Custom port](#custom-port)
 - [Uninstall](#uninstall)
 
 
+## Features
+
+- No external dependencies are used. The project leverages native Go packages only.
+- No external runtime dependencies. Some CLI tools require you to have a specific version of Node.js, Python or another language, this does not.
+- Multi-platform: Thanks to Go, this works on macOS, Windows and Linux
+
+
 ## Installation
 
-Install the CLI tool:
+### Install using Go
+
+If you have Go lang tooling installed, this is the way that is recommended since it will build the binary for your architecture and make it executable.
+
+Install the CLI tool using `go install`:
 
 ```sh
 go install github.com/tinacious/static-server@latest
 ```
+
+### Install manually
+
+Go to the [releases](https://github.com/tinacious/static-server/releases) page and download the appropriate release for your operating system and architecture.
+
+Put the file somewhere on your executables path, e.g. I use `~/.local/bin`.
+
+On macOS, you will need to trust the executable after the first run attempt in your **System Preferences &rarr; Privacy & Security** settings.
+
 
 ## Usage
 
@@ -49,4 +72,8 @@ PORT=1337 static-server
 
 ## Uninstall
 
-Open `~/go/bin` and delete `static-server`.
+To uninstall it, simply delete the executable `static-server`.
+
+If you installed it with Go, you can navigate to either `$GOPATH/bin` (if your `$GOPATH` is defined) or  `~/go/bin` and delete it from there.
+
+If you installed it manually, e.g. in `~/.local/bin`, delete it from there.
